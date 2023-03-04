@@ -20,3 +20,87 @@
         #se il campo di testo non è vuoto aggiungere il messaggio in coda agli altri del personaggio selezionato
 
 */
+
+function init(){
+
+    let a=''
+    for (let i=1; i<genereUt.length; i++) {
+        if (genereUt[i]=="m"){
+            a =  ` 
+            <li>
+            <div class="material-symbols-outlined icone">
+            face
+            </div>
+            ${nomeUtenti[i]}
+            ${cognomeUtenti[i]}
+            
+        </li>
+            `
+        }else{
+            a = ` 
+            <li>
+            <div class="material-symbols-outlined icone">
+            face_3
+            </div>
+            ${nomeUtenti[i]}
+            ${cognomeUtenti[i]}
+            
+        </li>
+            `
+        }
+    
+        let b = document.getElementById("listUtenti").innerHTML += a
+    }
+}
+function selezionaChat(){
+    let c= ''
+    for (let i=1; i<genereUt.length; i++) {
+        if (genereUt[i]=="m"){
+            c=`<header>
+                <!-- Nome dell'utente e data/ora ultimo messaggio -->
+                <div class="material-symbols-outlined icone">
+                face
+                </div>
+                <div>
+                    <div id="divNome">${nomeUtenti[i]}
+                    ${cognomeUtenti[i]}{</div>
+                    <div id="divUltimoMes">Oggi alle 9:45</div>
+                </div>
+                
+            </header>
+            <section>
+                <!-- Messaggi degli utenti -->
+                <article class="mes ut1">Ciao &#128512</article>
+                <article class="mes ut2">Ciao</article>
+            </section>
+            
+        </li>
+            `
+        }else{
+            c = `<header>
+            <!-- Nome dell'utente e data/ora ultimo messaggio -->
+            <div class="material-symbols-outlined icone">
+            <face_3
+            </div>
+            <div>
+                <div id="divNome">$${nomeUtenti[i]}
+                ${cognomeUtenti[i]}{</div>
+                <div id="divUltimoMes">Oggi alle 9:45</div>
+            </div>
+            
+        </header>
+        <section>
+            <!-- Messaggi degli utenti -->
+            <article class="mes ut1">Ciao &#128512</article>
+            <article class="mes ut2">Ciao</article>
+        </section>
+        
+    </li>
+        `
+        }
+        c = document.querySelector("section").innerHTML = c
+ }
+
+}    
+  
+    
